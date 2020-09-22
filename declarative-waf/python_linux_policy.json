@@ -1,0 +1,31 @@
+{
+  "policy": {
+    "name": "flask_python_policy",
+    "template": { "name": "POLICY_TEMPLATE_NGINX_BASE" },
+    "applicationLanguage": "utf-8",
+    "enforcementMode": "blocking",
+    "signature-settings": {
+        "attackSignatureFalsePositiveMode": "disabled",
+        "minimumAccuracyForAutoAddedSignatures": "low"
+    },
+    "server-technologies": [
+        { "serverTechnologyName": "Python" },
+        { "serverTechnologyName": "Unix/Linux" }
+    ],
+    "blocking-settings": {
+       "violations": [
+           {
+               "name": "VIOL_HTTP_PROTOCOL",
+               "alarm": true,
+               "block": true
+           }
+       ],
+      "http-protocols": [
+            {
+                "description": "Body in GET or HEAD requests",
+                "enabled": true
+            }
+        ]
+  }
+ }
+}
