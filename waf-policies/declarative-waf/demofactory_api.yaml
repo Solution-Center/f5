@@ -1,0 +1,24 @@
+openapi: 3.0.1
+info:
+  title: 'Demofactory API'
+  description: 'Demofactory API'
+  version: '1.0'
+servers:
+  - url: http://infra-linux.box.demofactory.fi:5888
+
+paths:
+  /api:
+   get:
+    summary: Get API Details
+    responses:
+      200:
+        description: DemoFactory API 1.0
+      404:
+        description: NotFound
+   post:
+    summary: Post a Chuck Norris Joke to Teams
+    responses:
+      200:
+        description: "200"
+      404:
+        description: NotFound
